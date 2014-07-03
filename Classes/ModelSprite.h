@@ -13,6 +13,7 @@
 #include "cocos2d.h"
 #endif /* defined(__clear_03__ModelSprite__) */
 
+//c++
 class ModelSprite : public cocos2d::Sprite{
 public:
     static ModelSprite *create(int row,int col);

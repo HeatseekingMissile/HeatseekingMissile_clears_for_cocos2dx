@@ -1,9 +1,21 @@
 #include "HelloWorldScene.h"
 #include "ModelSprite.h"
-#define WIDTH (9)
-#define HEIGHT (4)
-#define SPLIT (20)
+#define WIDTH (13)
+#define HEIGHT (7)
+#define SPLIT (15)
+
 USING_NS_CC;
+
+HelloWorld::HelloWorld()
+:spriteSheet(NULL), m_matrix(NULL), m_width(0), m_height(0), initX(0), initY(0),isAction(NULL){}
+
+HelloWorld::~HelloWorld(){
+    if (m_matrix) {
+        free(m_matrix);
+    }
+}
+
+
 
 Scene* HelloWorld::createScene()
 {
@@ -39,13 +51,16 @@ bool HelloWorld::init()
     this -> addChild(backSprite);
     
     //2 batch
-    SpriteFrameCache::getInstance() -> addSpriteFramesWithFile("meizhi.plist");
-    auto spriteSheet = SpriteBatchNode::create("meizhi.pvr.ccz");
+    SpriteFrameCache::getInstance() -> addSpriteFramesWithFile("meizhi64.plist");
+    spriteSheet = SpriteBatchNode::create("meizhi64.pvr.ccz");
     this -> addChild(spriteSheet);
+    
+    m_width = WIDTH;
+    m_height = HEIGHT;
     
     //3. init
     int arraySize = sizeof(ModelSprite *) * WIDTH * HEIGHT;
-    auto m_matrix = (ModelSprite **)malloc(arraySize);
+    m_matrix = (ModelSprite **)malloc(arraySize);
     memset((void *)m_matrix,0,arraySize);
     
     //4.createValue
@@ -66,26 +81,32 @@ void HelloWorld::createAndDropModel(int row,int col){
     ModelSprite *model = ModelSprite::create(row,col);
     Point endPosition = initPositionByItem(row,col);
 //    Point startPosition = Point(endPosition.x,endPosition.y+visibleSize.height*2);
-     Point startPosition = Point(endPosition.x,endPosition.y+visibleSize.height/2);
+     Point startPosition = Point(endPosition.x,endPosition.y+visibleSize.height*2);
     
     model -> setPosition(startPosition);
     
-    float speed = endPosition.y/visibleSize.height*2;
+    float speed = endPosition.y/visibleSize.height*4;
     
-    this -> addChild(model);
+    spriteSheet -> addChild(model);
     
     model -> runAction(MoveTo::create(speed,endPosition));
 };
 Point HelloWorld::initPositionByItem(int row,int col){
     Size visibleSize = Director::getInstance()->getVisibleSize();
     //固定的初始值
-    int initX = (visibleSize.width - WIDTH * ModelSprite::getContentWidth() - (WIDTH-1) * SPLIT)/2;
-    int initY = (visibleSize.height - HEIGHT * ModelSprite::getContentWidth() - (HEIGHT-1)*SPLIT)/2;
+    initX = (visibleSize.width - WIDTH * ModelSprite::getContentWidth() - (WIDTH-1) * SPLIT)/2;
+    initY = (visibleSize.height - HEIGHT * ModelSprite::getContentWidth() - (HEIGHT-1)*SPLIT)/2;
     
     int x = initX + (ModelSprite::getContentWidth()+SPLIT) * row + ModelSprite::getContentWidth()/2;
     int y = initY + (ModelSprite::getContentWidth()+SPLIT) * col + ModelSprite::getContentWidth()/2;
     return Point(x,y);
 };
+
+void HelloWorld::update(float f){
+    if (isAction) {
+        isAction = false;
+    }
+}
 
 void HelloWorld::menuCloseCallback(Ref* pSender)
 {

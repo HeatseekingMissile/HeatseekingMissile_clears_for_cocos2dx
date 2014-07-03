@@ -2,10 +2,14 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
+//#include "ModelSprite.h"
+class ModelSprite;
 
 class HelloWorld : public cocos2d::Layer
 {
 public:
+    HelloWorld();
+    ~HelloWorld();
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();
 
@@ -24,10 +28,19 @@ public:
     
     cocos2d::Point initPositionByItem(int row,int col);
     
-    //updateStatus
-    void update();
+
+    void update(float f);
     
     CREATE_FUNC(HelloWorld);
+private:
+    cocos2d::SpriteBatchNode *spriteSheet;
+    ModelSprite **m_matrix;// 2D array which store (SushiSprite *).
+    int m_width;
+    int m_height;
+    // for rapid count position
+    float initX;
+    float initY;
+    bool isAction;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

@@ -7,80 +7,80 @@
             <key>111.jpg</key>
             <dict>
                 <key>frame</key>
-                <string>{{104,206},{100,100}}</string>
+                <string>{{68,68},{64,64}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{100,100}}</string>
+                <string>{{0,0},{64,64}}</string>
                 <key>sourceSize</key>
-                <string>{100,100}</string>
+                <string>{64,64}</string>
             </dict>
             <key>222.jpg</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,206},{100,100}}</string>
+                <string>{{134,2},{64,64}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{100,100}}</string>
+                <string>{{0,0},{64,64}}</string>
                 <key>sourceSize</key>
-                <string>{100,100}</string>
+                <string>{64,64}</string>
             </dict>
             <key>333.jpg</key>
             <dict>
                 <key>frame</key>
-                <string>{{104,104},{100,100}}</string>
+                <string>{{68,2},{64,64}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{100,100}}</string>
+                <string>{{0,0},{64,64}}</string>
                 <key>sourceSize</key>
-                <string>{100,100}</string>
+                <string>{64,64}</string>
             </dict>
             <key>444.jpg</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,104},{100,100}}</string>
+                <string>{{2,134},{64,64}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{100,100}}</string>
+                <string>{{0,0},{64,64}}</string>
                 <key>sourceSize</key>
-                <string>{100,100}</string>
+                <string>{64,64}</string>
             </dict>
             <key>555.jpg</key>
             <dict>
                 <key>frame</key>
-                <string>{{104,2},{100,100}}</string>
+                <string>{{2,68},{64,64}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{100,100}}</string>
+                <string>{{0,0},{64,64}}</string>
                 <key>sourceSize</key>
-                <string>{100,100}</string>
+                <string>{64,64}</string>
             </dict>
             <key>666.jpg</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{100,100}}</string>
+                <string>{{2,2},{64,64}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{100,100}}</string>
+                <string>{{0,0},{64,64}}</string>
                 <key>sourceSize</key>
-                <string>{100,100}</string>
+                <string>{64,64}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -88,13 +88,13 @@
             <key>format</key>
             <integer>2</integer>
             <key>realTextureFileName</key>
-            <string>meizhi.pvr.ccz</string>
+            <string>meizhi64.pvr.ccz</string>
             <key>size</key>
-            <string>{256,512}</string>
+            <string>{256,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:8e36adfb5f8585834c8ae57c152dcff0:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:624f98f4cb7594cc2586043bf320f267:1/1$</string>
             <key>textureFileName</key>
-            <string>meizhi.pvr.ccz</string>
+            <string>meizhi64.pvr.ccz</string>
         </dict>
     </dict>
 </plist>
